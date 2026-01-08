@@ -29,8 +29,8 @@ class ModelLoader:
     async def load_all_models(self):
         logger.info(f"Loading models on device: {self.device}")
 
-        os.environ['TRANSFORMERS_CACHE'] = settings.HUGGINGFACE_CACHE_DIR
-        os.environ['HF_HOME'] = settings.HUGGINGFACE_CACHE_DIR
+        os.environ["TRANSFORMERS_CACHE"] = settings.HUGGINGFACE_CACHE_DIR
+        os.environ["HF_HOME"] = settings.HUGGINGFACE_CACHE_DIR
 
         try:
             logger.info("Loading emotion analysis model...")

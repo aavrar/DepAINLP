@@ -149,7 +149,10 @@ class AnalysisService:
                 emotion_analysis=emotion_analysis,
                 topic_analysis=topic_analysis,
                 summary=summary,
-                metadata={"transcript_length": len(transcript), "word_count": len(transcript.split())},
+                metadata={
+                    "transcript_length": len(transcript),
+                    "word_count": len(transcript.split()),
+                },
             )
 
         except Exception as e:
