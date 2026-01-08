@@ -186,68 +186,9 @@ GitHub Actions workflows:
 - Backend: Linting, testing, Docker build on PR and merge
 - Frontend: Coming soon
 
-## Environment Setup
-
-### Required Tools
-- Python 3.11+ (backend)
-- Node.js 18+ (frontend)
-- PostgreSQL 15+ (backend)
-- Docker & Docker Compose
-- Git
-
-### Recommended IDE Extensions
-- Python: Black, Pylint, Pylance
-- JavaScript: ESLint, Prettier
-- General: EditorConfig, GitLens
-
-## Contributing
-
-We welcome contributions from all team members! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for:
-- Code style guidelines
-- Branch naming conventions
-- PR requirements
-- Testing standards
-
-## License
-
-MIT License
-
-## Support
-
-- Create an issue using templates in `.github/ISSUE_TEMPLATE/`
-- Contact team leads
-- Check documentation in respective team folders
-
-## Roadmap
-
-### Phase 1 (Current)
-- [x] Backend API setup
-- [x] ML model integration
-- [x] Database design
-- [ ] Frontend extension structure
-- [ ] Caption scraping implementation
-
-### Phase 2
-- [ ] Real-time analysis pipeline
-- [ ] Chrome extension UI
-- [ ] User authentication
-- [ ] Analytics dashboard
-
-### Phase 3
-- [ ] Advanced analytics features
-- [ ] Export functionality
-- [ ] Team collaboration features
-- [ ] Chrome Web Store publication
-
-## Acknowledgments
-
-- AI Club for project organization
-- HuggingFace for transformer models
-- FastAPI and React communities
-
 ## Status
 
 Backend: Ready for development
 Frontend: Structure pending
 
-Last updated: January 2024
+Last updated: January 2026
