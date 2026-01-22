@@ -84,3 +84,35 @@ class AnalysisResult(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class TimelineMoment(BaseModel):
+    """Represents a key moment in the meeting timeline."""
+
+    moment_type: str = Field(..., description="Type of moment (e.g., emotional_peak, decision, action_item)")
+    timestamp: datetime = Field(..., description="When the moment occurred")
+    importance_score: float = Field(..., ge=0.0, le=1.0, description="Importance score of the moment")
+    text_snippet: str = Field(..., description="Relevant text snippet from the transcript")
+    metadata: Dict[str, Any] = Field(default_factory=dict, description="Additional metadata about the moment")
+
+
+class TimelineRequest(BaseModel):
+    """Request for timeline analysis."""
+
+    meeting_id: str = Field(..., description="Unique identifier for the meeting")
+    transcript: Optional[str] = Field(None, description="Full transcript text (if not in database)")
+    use_existing_analysis: bool = Field(
+        default=True, description="Whether to use existing analysis from database"
+    )
+
+
+class TimelineResponse(BaseModel):
+    """Response containing chronological key moments."""
+
+    meeting_id: str
+    moments: List[TimelineMoment] = Field(..., description="Chronological list of key moments")
+    total_moments: int = Field(..., description="Total number of moments detected")
+    moment_types: Dict[str, int] = Field(
+        default_factory=dict, description="Count of each moment type"
+    )
+    created_at: datetime = Field(default_factory=datetime.utcnow)
